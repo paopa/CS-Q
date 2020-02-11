@@ -7,8 +7,8 @@ public class SortZero {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-//		int[] a = {9,0,4,6,0,7,0,1,0};
-		int[] a = {0,3,0,8,1,0,0,2,0};
+		int[] a = {9,0,4,6,0,7,0,1,0};
+//		int[] a = {0,3,0,8,1,0,0,2,0};
 //		solve1(a);
 		solve2(a);
 		
@@ -19,6 +19,7 @@ public class SortZero {
 	
 	/**
 	 * 概念：使用bubblesort的原理，去解決排序問題
+	 * 
 	 * 時間複雜度：O(n^2)
 	 * 
 	 * @param array
@@ -35,7 +36,9 @@ public class SortZero {
 	}
 	
 	/**
-	 * 概念：
+	 * 概念：利用temp紀錄目前有0的array key值，
+	 * 再去進行交換
+	 * 
 	 * 時間複雜度：O(n)
 	 * 
 	 * @param array

@@ -1,2 +1,2 @@
 # CS-Q
-Computer Science Questions
+Computer Science Problems

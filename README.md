@@ -3,7 +3,7 @@
 > Author: pao.s.w\
 > LogTime: 2020.07.17\
 > GitHub: https://github.com/paopa \
-> LinkedIn: https://www.linkedin.com/feed/ \
+> LinkedIn: https://www.linkedin.com/in/pao-sheng-wang-68064a19a/ \
 > Meduim: https://medium.com/@david840422
 
 ## Target

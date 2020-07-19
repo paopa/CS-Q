@@ -1,0 +1,6 @@
+# ignore folder
+.idea
+out
+
+# ignore file type
+*.iml

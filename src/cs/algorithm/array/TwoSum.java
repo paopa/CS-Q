@@ -1,4 +1,4 @@
-package cs.notes;
+package cs.algorithm.array;
 
 public class TwoSum {
 

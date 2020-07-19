@@ -1,10 +1,12 @@
 # LeetCode Demo
-
-> Author: pao.s.w\
-> LogTime: 2020.07.17\
-> GitHub: https://github.com/paopa \
-> Meduim: https://medium.com/@pao.pa
-
+---
+> author : @Paopa \
+> log time : 2020.07.19
+> 
+> GitHub : https://github.com/paopa \
+> Meduim : https://medium.com/@pao.pa
+> 
+---
 ## Target
 ```
  solve leetcode problems

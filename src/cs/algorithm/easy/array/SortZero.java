@@ -1,4 +1,4 @@
-package cs.algorithm.array;
+package cs.algorithm.easy.array;
 
 public class SortZero {
 	/**

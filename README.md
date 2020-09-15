@@ -20,6 +20,11 @@
     - src
         - cs
             - algorithm
+                - base `basic object`
+                - easy `easy problems`
+                - medium `medium problems`
+                - hard `hard problems`
+                - practice `algorithm practice`
             - database
             - shell
     - out

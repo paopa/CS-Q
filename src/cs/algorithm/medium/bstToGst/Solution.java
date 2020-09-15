@@ -3,6 +3,8 @@ package cs.algorithm.medium.bstToGst;
 import cs.algorithm.base.binaryTree.TreeNode;
 
 /**
+ * 1038. Binary Search Tree to Greater Sum Tree
+ * <p>
  * Given the root of a binary search tree with distinct values,
  * modify it so that every node has a new value equal to the sum of the values of the original tree
  * that are greater than or equal to node.val.
@@ -18,6 +20,7 @@ import cs.algorithm.base.binaryTree.TreeNode;
  * The number of nodes in the tree is between 1 and 100.
  * Each node will have value between 0 and 100.
  * The given tree is a binary search tree.
+ * <p>
  * Note: This question is the same as 538: https://leetcode.com/problems/convert-bst-to-greater-tree/
  */
 public class Solution {

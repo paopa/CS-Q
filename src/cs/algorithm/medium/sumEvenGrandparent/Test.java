@@ -1,7 +1,6 @@
 package cs.algorithm.medium.sumEvenGrandparent;
 
-import cs.algorithm.base.binaryTree.BinaryTree;
-import cs.algorithm.base.binaryTree.TreeNode;
+import cs.algorithm.base.node.BinaryTree;
 
 
 public class Test {

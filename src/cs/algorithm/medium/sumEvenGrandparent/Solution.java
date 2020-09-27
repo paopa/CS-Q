@@ -1,6 +1,6 @@
 package cs.algorithm.medium.sumEvenGrandparent;
 
-import cs.algorithm.base.binaryTree.TreeNode;
+import cs.algorithm.base.node.TreeNode;
 
 /**
  * Given a binary tree, return the sum of values of nodes with even-valued grandparent.  (A grandparent of a node is the parent of its parent, if it exists.)

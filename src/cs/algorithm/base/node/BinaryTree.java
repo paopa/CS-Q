@@ -1,4 +1,4 @@
-package cs.algorithm.base.binaryTree;
+package cs.algorithm.base.node;
 
 public class BinaryTree {
 

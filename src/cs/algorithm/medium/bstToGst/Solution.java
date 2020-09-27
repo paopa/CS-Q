@@ -1,6 +1,6 @@
 package cs.algorithm.medium.bstToGst;
 
-import cs.algorithm.base.binaryTree.TreeNode;
+import cs.algorithm.base.node.TreeNode;
 
 /**
  * 1038. Binary Search Tree to Greater Sum Tree

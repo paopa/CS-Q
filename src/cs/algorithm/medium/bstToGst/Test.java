@@ -1,7 +1,7 @@
 package cs.algorithm.medium.bstToGst;
 
-import cs.algorithm.base.binaryTree.BinarySearchTree;
-import cs.algorithm.base.binaryTree.TreeNode;
+import cs.algorithm.base.node.BinarySearchTree;
+import cs.algorithm.base.node.TreeNode;
 
 public class Test {
     public static void main(String[] args) {

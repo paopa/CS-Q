@@ -1,8 +1,5 @@
 package cs.algorithm.easy.reverseinteger;
 
-import java.util.Arrays;
-import java.util.stream.Stream;
-
 /**
  * 7. Reverse Integer
  * Easy

@@ -1,4 +1,4 @@
-package cs.algorithm.easy.subtractProductAndSum;
+package cs.algorithm.easy.subtractproductandsum;
 
 /**
  * 1281. Subtract the Product and Sum of Digits of an Integer

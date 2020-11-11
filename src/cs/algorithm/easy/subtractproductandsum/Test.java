@@ -1,4 +1,4 @@
-package cs.algorithm.easy.subtractProductAndSum;
+package cs.algorithm.easy.subtractproductandsum;
 
 public class Test {
     public static void main(String[] args) {

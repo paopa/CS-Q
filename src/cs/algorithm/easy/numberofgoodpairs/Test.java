@@ -1,4 +1,4 @@
-package cs.algorithm.easy.numberOfGoodPairs;
+package cs.algorithm.easy.numberofgoodpairs;
 
 import cs.algorithm.base.util.Runtime;
 

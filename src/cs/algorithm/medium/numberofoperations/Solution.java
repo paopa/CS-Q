@@ -1,4 +1,4 @@
-package cs.algorithm.medium.numberOfOperations;
+package cs.algorithm.medium.numberofoperations;
 
 /**
  * 1319. Number of Operations to Make Network Connected

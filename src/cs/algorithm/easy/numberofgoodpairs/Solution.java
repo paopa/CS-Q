@@ -1,4 +1,4 @@
-package cs.algorithm.easy.numberOfGoodPairs;
+package cs.algorithm.easy.numberofgoodpairs;
 
 /**
  * 1512. Number of Good Pairs

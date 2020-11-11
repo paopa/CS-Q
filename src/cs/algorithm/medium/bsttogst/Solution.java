@@ -1,4 +1,4 @@
-package cs.algorithm.medium.bstToGst;
+package cs.algorithm.medium.bsttogst;
 
 import cs.algorithm.base.node.TreeNode;
 

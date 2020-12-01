@@ -1,4 +1,4 @@
-package cs.algorithm.medium.numberofoperations;
+package cs.algorithm.medium.number.of.operations;
 
 public class Test {
     public static void main(String[] args) {

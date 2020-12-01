@@ -1,4 +1,4 @@
-package cs.algorithm.medium.addtwonumbers;
+package cs.algorithm.medium.add.two.numbers;
 
 public class Test {
     public static void main(String[] args) {

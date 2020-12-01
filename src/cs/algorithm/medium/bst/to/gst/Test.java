@@ -1,4 +1,4 @@
-package cs.algorithm.medium.bsttogst;
+package cs.algorithm.medium.bst.to.gst;
 
 import cs.algorithm.base.node.BinarySearchTree;
 import cs.algorithm.base.node.TreeNode;

@@ -1,4 +1,4 @@
-package cs.algorithm.medium.sumevengrandparent;
+package cs.algorithm.medium.sum.even.grandparent;
 
 import cs.algorithm.base.node.TreeNode;
 

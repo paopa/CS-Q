@@ -1,9 +1,6 @@
 package cs.algorithm.medium.longest.substring.without.repeating.characters;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 3. Longest Substring Without Repeating Characters
@@ -36,7 +33,7 @@ import java.util.Map;
  * <p>
  * <p>
  * Constraints:
- * 0 <= s.length <= 5 * 104
+ * 0 <= s.length <= 5 * 10^4
  * s consists of English letters, digits, symbols and spaces.
  * <p>
  * link: https://leetcode.com/problems/longest-substring-without-repeating-characters/
@@ -49,26 +46,17 @@ public class Solution {
     }
 
     private int solve2(String s) {
-        int loopCounter = 0;
-        int stringCount = 0;
-        Map<String, Integer> collection = new HashMap<>();
-        while (stringCount <= s.length()) {
-            String t = s.substring(loopCounter, (stringCount + loopCounter));
-            if (isUniqueCharactersString(t)) {
-                collection.put(t, t.length());
-                stringCount++;
-                loopCounter = 0;
+        int max = 0, position = 0, carry = 0;
+        Set<Character> charBuff = new HashSet<>();
+        while (position < s.length()) {
+            if (charBuff.contains(s.charAt(position))) {
+                charBuff.remove(s.charAt(carry++));
             } else {
-                if (stringCount + loopCounter >= s.length()) {
-                    stringCount++;
-                    loopCounter = 0;
-                } else {
-                    loopCounter++;
-                }
+                charBuff.add(s.charAt(position++));
+                max = Math.max(max, charBuff.size());
             }
-
         }
-        return Collections.max(collection.values());
+        return max;
     }
 
     private int solve1(String s) {

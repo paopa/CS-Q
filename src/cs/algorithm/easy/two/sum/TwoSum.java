@@ -1,4 +1,4 @@
-package cs.algorithm.easy.array;
+package cs.algorithm.easy.two.sum;
 
 
 /**

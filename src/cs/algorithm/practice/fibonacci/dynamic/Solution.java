@@ -1,4 +1,4 @@
-package cs.algorithm.practice.dynamic;
+package cs.algorithm.practice.fibonacci.dynamic;
 
 /**
  * 用動態規劃法 進行費伯納序列 (Fibonacci Polynomial)
@@ -21,5 +21,12 @@ public class Solution {
             return output[n] = fibonacci(n - 1) + fibonacci(n - 2);
         }
         return result;
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+        System.out.println(Solution.fibonacci(9));
+        System.out.println(Solution.fibonacci(4));
     }
 }

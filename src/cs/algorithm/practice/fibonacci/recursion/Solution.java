@@ -1,4 +1,4 @@
-package cs.algorithm.practice.fibonacci;
+package cs.algorithm.practice.fibonacci.recursion;
 
 /**
  * 費伯納序列 (Fibonacci Polynomial)
@@ -12,5 +12,11 @@ public class Solution {
             return 1;
         }
         return fibonacci(input - 1) + fibonacci(input - 2);
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+        System.out.println(Solution.fibonacci(9));
     }
 }

@@ -1,4 +1,4 @@
-package cs.algorithm.practice.hierarchical;
+package cs.algorithm.practice.hierarchical.recursion;
 
 /**
  * 階層函數演算法

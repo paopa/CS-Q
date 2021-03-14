@@ -38,12 +38,27 @@ public abstract class Solutions {
         }
     }
 
+    /**
+     * @link https://leetcode.com/problems/merge-two-sorted-lists/discuss/1107130/Java-Solution-Explanation-%2B-Code
+     */
     static final class Solution2 extends Solutions {
 
         @Override
         public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-            //todo
-            return null;
+            ListNode head = new ListNode();
+            ListNode tail = head;
+            while (l1 != null || l2 != null) {
+                if (l2 == null || (l1 != null && l1.val < l2.val)) {
+                    tail.next = l1;
+                    tail = l1;
+                    l1 = l1.next;
+                } else {
+                    tail.next = l2;
+                    tail = l2;
+                    l2 = l2.next;
+                }
+            }
+            return head.next;
         }
     }
 
@@ -115,6 +130,6 @@ class Test {
 //        ListNode l1 = null;
         ListNode l2 = new ListNode(1, new ListNode(3, new ListNode(4)));
 //        ListNode l2 = null;
-        System.out.println(Solutions.factory("1").mergeTwoLists(l1, l2));
+        System.out.println(Solutions.factory("2").mergeTwoLists(l1, l2));
     }
 }

@@ -1,10 +1,8 @@
 package cs.algorithm.easy.remove.duolicates;
 
-import java.util.Arrays;
-
 /**
- *
- *
+ * 26. Remove Duplicates from Sorted Array
+ * <p>
  * Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length.
  * Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
  * <p>
@@ -33,31 +31,47 @@ import java.util.Arrays;
  * for (int i = 0; i < len; i++) {
  * print(nums[i]);
  * }
+ * <p>
+ * Constraints:
+ * <p>
+ * 0 <= nums.length <= 3 * 10^4
+ * -10^4 <= nums[i] <= 10^4
+ * nums is sorted in ascending order.
  */
-public class RemoveDuplicates {
+public abstract class Solutions {
+
+    abstract int removeDuplicates(int[] nums);
+
+    static final class Solution1 extends Solutions {
+
+        @Override
+        int removeDuplicates(int[] nums) {
+            // i 紀錄當前位置 最終會全部跑過一輪
+            // j 紀錄目前變換到的位置
+            // return j
+            int j = 0;
+            int tmp = 10001;
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] != tmp) {
+                    j++;
+                    nums[j - 1] = nums[i];
+                }
+                tmp = nums[i];
+            }
+            return j;
+        }
+    }
+}
+
+class Test {
     public static void main(String[] args) {
 //        int[] nums = {1, 1, 2};
         int[] nums = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
-        int len = removeDuplicates(nums);
+        int len = new Solutions.Solution1().removeDuplicates(nums);
         System.out.println(len);
-        System.out.println(Arrays.toString(nums));
-    }
-
-    private static int removeDuplicates(int[] nums) {
-        int j = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (i + 1 < nums.length) {
-                if (nums[i] == nums[i + 1]) {
-                    nums[i] = nums[i + 1];
-                    j++;
-                } else {
-                    nums[j] = nums[i + 1];
-                }
-            } else {
-                nums[i] = 0;
-            }
+        for (int i = 0; i < len; i++) {
+            System.out.print(nums[i] + " ");
         }
-        return nums.length - j;
+        System.out.println();
     }
-
 }

@@ -16,11 +16,18 @@ public abstract class Solutions {
         switch (solution) {
             case "1":
                 return new Solution1();
+            case "2":
+                return new Solution2();
             default:
                 throw new IllegalArgumentException();
         }
     }
 
+    /**
+     * iterative
+     * time complexity: O(n)
+     * space complexity: O(1)
+     */
     private static class Solution1 extends Solutions {
 
         @Override
@@ -37,12 +44,31 @@ public abstract class Solutions {
             return prev;
         }
     }
+
+    /**
+     * recursive
+     * time complexity: O(n)
+     * space complexity: O(n)
+     */
+    private static class Solution2 extends Solutions {
+
+        @Override
+        public ListNode reverse(ListNode head) {
+            if (isNull(head) || isNull(head.next)) {
+                return head;
+            }
+            ListNode node = reverse(head.next);
+            head.next.next = head;
+            head.next = null;
+            return node;
+        }
+    }
 }
 
 class Test {
     public static void main(String[] args) {
-        ListNode test1 = new ListNode(1, new ListNode(2, new ListNode(3)));
-        System.out.println(Solutions.factory("1").reverse(test1));
+        ListNode test1 = new ListNode(1, new ListNode(2, new ListNode(3,new ListNode(4))));
+        System.out.println(Solutions.factory("2").reverse(test1));
     }
 }
 

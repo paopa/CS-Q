@@ -1,5 +1,7 @@
 package cs.algorithm.easy.node.reverse;
 
+import java.util.List;
+
 import static java.util.Objects.isNull;
 
 /**
@@ -7,7 +9,7 @@ import static java.util.Objects.isNull;
  */
 public abstract class Solutions {
 
-    public abstract ListNode reverse(ListNode node);
+    public abstract Node reverse(Node node);
 
     public static Solutions factory(String solution) {
         if (isNull(solution)) {
@@ -31,15 +33,15 @@ public abstract class Solutions {
     private static class Solution1 extends Solutions {
 
         @Override
-        public ListNode reverse(ListNode node) {
-            ListNode prev = null;
-            ListNode current = node;
-            ListNode next;
-            while (!isNull(current)) {
-                next = current.next;
-                current.next = prev;
-                prev = current;
-                current = next;
+        public Node reverse(Node node) {
+            Node prev = null;
+            Node curr = node;
+            Node next;
+            while (!isNull(curr)) {
+                next = curr.next;
+                curr.next = prev;
+                prev = curr;
+                curr = next;
             }
             return prev;
         }
@@ -53,11 +55,11 @@ public abstract class Solutions {
     private static class Solution2 extends Solutions {
 
         @Override
-        public ListNode reverse(ListNode head) {
+        public Node reverse(Node head) {
             if (isNull(head) || isNull(head.next)) {
                 return head;
             }
-            ListNode node = reverse(head.next);
+            Node node = reverse(head.next);
             head.next.next = head;
             head.next = null;
             return node;
@@ -65,25 +67,15 @@ public abstract class Solutions {
     }
 }
 
-class Test {
-    public static void main(String[] args) {
-        ListNode test1 = new ListNode(1, new ListNode(2, new ListNode(3,new ListNode(4))));
-        System.out.println(Solutions.factory("2").reverse(test1));
-    }
-}
-
-class ListNode {
+class Node {
     int val;
-    ListNode next;
+    Node next;
 
-    ListNode() {
-    }
-
-    ListNode(int val) {
+    Node(int val) {
         this.val = val;
     }
 
-    ListNode(int val, ListNode next) {
+    Node(int val, Node next) {
         this.val = val;
         this.next = next;
     }
@@ -94,5 +86,30 @@ class ListNode {
                 "val=" + val +
                 ", next=" + next +
                 '}';
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+        List.of(
+                new TestCase(TestCase.case1()),
+                new TestCase(TestCase.case2())
+        ).forEach(test -> System.out.println(Solutions.factory("2").reverse(test.root)));
+    }
+
+    private static class TestCase {
+        Node root;
+
+        public TestCase(Node root) {
+            this.root = root;
+        }
+
+        public static Node case1() {
+            return new Node(1, new Node(2, new Node(3, new Node(4))));
+        }
+
+        public static Node case2() {
+            return new Node(1);
+        }
     }
 }

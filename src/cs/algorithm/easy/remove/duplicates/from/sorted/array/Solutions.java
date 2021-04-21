@@ -1,4 +1,4 @@
-package cs.algorithm.easy.remove.duolicates;
+package cs.algorithm.easy.remove.duplicates.from.sorted.array;
 
 /**
  * 26. Remove Duplicates from Sorted Array

@@ -1,15 +1,37 @@
-package cs.algorithm.easy.node.reverse;
+package cs.algorithm.easy.reverse.linked.list;
 
 import java.util.List;
 
 import static java.util.Objects.isNull;
 
 /**
- * singly-linked node reverse
+ * 206. Reverse Linked List
+ * Easy
+ * Given the head of a singly linked list, reverse the list, and return the reversed list.
+ *
+ * Example 1:
+ * Input: head = [1,2,3,4,5]
+ * Output: [5,4,3,2,1]
+ *
+ * Example 2:
+ * Input: head = [1,2]
+ * Output: [2,1]
+ *
+ * Example 3:
+ * Input: head = []
+ * Output: []
+ *
+ * Constraints:
+ *
+ * The number of nodes in the list is the range [0, 5000].
+ * -5000 <= Node.val <= 5000
+ *
+ *
+ * Follow up: A linked list can be reversed either iteratively or recursively. Could you implement both?
  */
 public abstract class Solutions {
 
-    public abstract Node reverse(Node node);
+    public abstract ListNode reverse(ListNode head);
 
     public static Solutions factory(String solution) {
         if (isNull(solution)) {
@@ -33,10 +55,10 @@ public abstract class Solutions {
     private static class Solution1 extends Solutions {
 
         @Override
-        public Node reverse(Node node) {
-            Node prev = null;
-            Node curr = node;
-            Node next;
+        public ListNode reverse(ListNode head) {
+            ListNode prev = null;
+            ListNode curr = head;
+            ListNode next;
             while (!isNull(curr)) {
                 next = curr.next;
                 curr.next = prev;
@@ -55,11 +77,11 @@ public abstract class Solutions {
     private static class Solution2 extends Solutions {
 
         @Override
-        public Node reverse(Node head) {
+        public ListNode reverse(ListNode head) {
             if (isNull(head) || isNull(head.next)) {
                 return head;
             }
-            Node node = reverse(head.next);
+            ListNode node = reverse(head.next);
             head.next.next = head;
             head.next = null;
             return node;
@@ -67,15 +89,15 @@ public abstract class Solutions {
     }
 }
 
-class Node {
+class ListNode {
     int val;
-    Node next;
+    ListNode next;
 
-    Node(int val) {
+    ListNode(int val) {
         this.val = val;
     }
 
-    Node(int val, Node next) {
+    ListNode(int val, ListNode next) {
         this.val = val;
         this.next = next;
     }
@@ -98,18 +120,18 @@ class Test {
     }
 
     private static class TestCase {
-        Node root;
+        ListNode root;
 
-        public TestCase(Node root) {
+        public TestCase(ListNode root) {
             this.root = root;
         }
 
-        public static Node case1() {
-            return new Node(1, new Node(2, new Node(3, new Node(4))));
+        public static ListNode case1() {
+            return new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
         }
 
-        public static Node case2() {
-            return new Node(1);
+        public static ListNode case2() {
+            return new ListNode(1);
         }
     }
 }

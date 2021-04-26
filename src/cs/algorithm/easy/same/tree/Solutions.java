@@ -1,8 +1,6 @@
 package cs.algorithm.easy.same.tree;
 
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 /**
  * 100. Same Tree

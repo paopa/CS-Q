@@ -7,7 +7,7 @@ import java.util.*;
 public abstract class Solutions implements Console<String> {
 
     enum Type {
-        A(new Solution1());
+        V1(new Solution1());
 
         private final Solutions solution;
 
@@ -22,44 +22,47 @@ public abstract class Solutions implements Console<String> {
 
     @Override
     public String execute(String input) {
-        return encode(input);
+        return createTree(input).toString();
     }
 
-    public abstract String encode(String text);
+    public abstract Node createTree(String text);
 
     private static class Solution1 extends Solutions {
         @Override
-        public String encode(String text) {
-            final Map<String, Node> map = new HashMap<>();
-            for (char c : text.toCharArray()) {
-                final String s = String.valueOf(c);
-                if (map.containsKey(s)) {
-                    map.get(s).increase();
-                } else {
-                    map.put(s, new Node(c));
-                }
-            }
+        public Node createTree(String text) {
+            final Map<Character, Node> map = toMap(text);
             final LinkedList<Node> queue = new LinkedList<>(new ArrayList<>(map.values()));
-            Collections.sort(queue);
             Node root = null;
             while (!queue.isEmpty()) {
                 if (queue.size() == 1) {
                     root = queue.poll();
                     break;
                 }
+                Collections.sort(queue);
                 Node node1 = queue.poll();
                 Node node2 = queue.poll();
                 queue.push(new Node((node1.getValue() + node2.getValue()), node1, node2));
-                Collections.sort(queue);
             }
-            return root.toString();
+            return root;
+        }
+
+        private Map<Character, Node> toMap(String text) {
+            return new HashMap<>() {{
+                for (char c : text.toCharArray()) {
+                    if (this.containsKey(c)) {
+                        this.get(c).increase();
+                        continue;
+                    }
+                    this.put(c, new Node(c));
+                }
+            }};
         }
     }
 }
 
 class Verifier {
     public static void main(String[] args) {
-        Console.execute(Solutions.factory(Solutions.Type.A));
+        Console.execute(Solutions.factory(Solutions.Type.V1));
     }
 }
 

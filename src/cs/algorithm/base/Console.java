@@ -5,7 +5,7 @@ import java.util.Scanner;
 public interface Console<O> {
 
     default O execute(String input) {
-        return null;
+        throw new UnsupportedOperationException();
     }
 
     static void execute(Console console) {
